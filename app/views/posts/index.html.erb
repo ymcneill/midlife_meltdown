@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<h1>Post-It melts...</h1>
+
+<% @posts.each do |post| %>
+  <div class="panel panel-default">
+  
+    
+      <div class="panel-heading"><b>Title</b>
+      <h3><%= post.title %></h3> 
+      <p>by <em><%= link_to post.user.username, 
+      user_posts_path(id: post.user_id) %></em></p>
+      </div>
+
+      <div class="panel-body">
+        <%= post.blog_entry.html_safe %>
+      </div>
+
+      <div class="panel-footer">
+        <%= link_to 'Show', post, class: "btn button3" %>
+        <%= link_to 'Edit', edit_post_path(post), class: "btn button4" %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn button2" %>
+      </div>
+  </div>     
+
+
+  <% end %>
+</div>
+
+
+<%= paginate @posts %>
+
+<%= link_to 'New Post', new_post_path %>
+<br>
