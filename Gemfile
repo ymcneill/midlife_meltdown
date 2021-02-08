@@ -59,5 +59,5 @@ gem "bootstrap-sass"
 gem "jquery-rails"
 gem 'devise'
 gem 'gravatarify', '~> 3.0.0'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'kaminari'
